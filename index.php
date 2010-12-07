@@ -44,6 +44,7 @@
 			<div id="tabs-1">
 				<h2>1. Embed code konfigurieren</h2>
 				<form id="generator">
+					<h3>Verhältnis</h3>
 					<span>16:9</span> <input type="radio" name="size" value="1" checked="checked" /><br/>
 					<span>4:3</span> <input type="radio" name="size" value="2"/><br/>
 					<br/>
@@ -52,13 +53,21 @@
 					<span>Breite</span> <input style="border:0px; width:30px;" type="text" name="width" id="width" value="512" readonly="readonly"/><br/>
 					<span>Höhe</span> <input style="border:0px; width:30px" type="text" name="height" id="height" value="288" readonly="readonly" /><br/>
 					<br/>
+					<h3>Allgemein</h3>
 					<span>Video Id *</span> <input type="text" name="videoId" id="videoId" value="" /><br/>
 					<span>Titel *</span> <input type="text" name="title" id="titel" value="" /><br/>
 					<span>Environment *</span> <input type="text" name="environment" id="environment" value="" /><br/>
 					<br/>
+					<h3>Verhalten</h3>
 					<span>autoplay + ton</span> <input type="radio" name="action" value="1" /><br/>
 					<span>autoplay + stum</span> <input type="radio" name="action" value="2"/><br/>
 					<span>push to play + ton</span> <input type="radio" name="action" value="3" checked="checked"/><br/><br/>
+					<br/>
+					<h3>Platform</h3>
+					<span>sevenload</span> <input type="radio" name="platform" value="1" checked="checked"/><br/>
+					<span>musictv</span> <input type="radio" name="platform" value="2" /><br/>
+
+
 				</form>
 			</div>
 			<div id="tabs-2">

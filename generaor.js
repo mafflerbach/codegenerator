@@ -14,31 +14,64 @@ var App = {};
 				videoid:$("#generator input[name='videoId']").attr('value'),
 				environment:$("#generator input[name='environment']").attr('value'),
 				title:$("#generator input[name='title']").attr('value'),
-				action:$("#generator input[name='action']:checked").attr('value')
+				action:$("#generator input[name='action']:checked").attr('value'),
+				platform:$("#generator input[name='platform']:checked").attr('value')
 			}
+
 			return attributes;
+		},
+
+		getVideoSetting : function(action, html) {
+			if (html) {
+				switch (action) {
+					case '1':
+						action = 'play/';
+						break;
+
+					case '2':
+						action = 'play/mute/';
+						break;
+
+					case '3':
+						action = '';
+						break;
+
+					default:
+						action = 'play/';
+						break;
+				}
+			} else {
+				switch (action) {
+					case '1':
+						action = '/play';
+						break;
+
+					case '2':
+						action = '/play/mute';
+						break;
+
+					case '3':
+						action = '';
+						break;
+
+					default:
+						action = '/play';
+						break;
+				}
+			}
+
+			return action;
 
 		},
 
 		gethtmlCode : function (values) {
-			var action = ''
-			switch (values.action) {
-				case '1':
-					action = 'play/';
-					break;
-
-				case '2':
-					action = 'play/mute/';
-					break;
-
-				case '3':
-					action = '';
-					break;
-
-				default:
-					action = 'play/';
-					break;
+			var action = this.getVideoSetting(values.action, true);
+				
+			var platform = '';
+			if (values.platform == 2) {
+				platform = 'musictv/';
 			}
+
 
 			var code = '<object codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="'+values.width+'" height="'+values.height+'">\n\
 <param name="allowFullscreen" value="true" />\n\
@@ -55,33 +88,22 @@ var App = {};
 	width="'+values.width+'" height="'+values.height+'">\n\
 </embed>\n\
 </object>\n\
-<p><a href="http://de.sevenload.com/videos/'+values.videoid+'">'+ values.title +'</a></p>';
+<p><a href="http://de.sevenload.com/'+platform+'videos/'+values.videoid+'">'+ values.title +'</a></p>';
 
 			return code;
 			
 		},
 
 		getjavascriptCode : function (values) {
-			var action = ''
-			switch (values.action) {
-				case '1':
-					action = '/play';
-					break;
+			var action = this.getVideoSetting(values.action, false);
 
-				case '2':
-					action = '/play/mute';
-					break;
-
-				case '3':
-					action = '';
-					break;
-
-				default:
-					action = '/play';
-					break;
+			var platform = '';
+			if (values.platform == 2) {
+				platform = 'musictv/';
 			}
 
-			var code = '<script src="http://de.sevenload.com/pl/' + values.videoid + '/' + values.width + 'x' + values.height + action + '?environment=' + values.environment + '" type="text/javascript"> </script>';
+			var code = '<script src="http://de.sevenload.com/pl/' + values.videoid + '/' + values.width + 'x' + values.height + action + '?environment=' + values.environment + '" type="text/javascript"> </script>\n\
+						<p><a href="http://de.sevenload.com/'+platform+'videos/' + values.videoid + '">' + values.title + '</a></p>';
 			return code;
 			
 		},
@@ -477,7 +499,7 @@ var App = {};
 				max:99,
 				autoFill: false,
 				formatItem: function(row) {
-					return row.text + "\" [" + row.comment+ "]";
+					return row.text + " [" + row.comment+ "]";
 				},
 				formatMatch: function(row) {
 					return row.comment + " " + row.text;
