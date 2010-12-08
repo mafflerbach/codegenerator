@@ -81,7 +81,7 @@
 					HTML: <br/>
 					<textarea id="htmlcode" style="width:700px; height:300px;"></textarea><br/>
 					JavaScript: <br/>
-					<textarea id="javascriptcode" style="width:700px; height:40px;"></textarea>
+					<textarea id="javascriptcode" style="width:700px; height:60px;"></textarea>
 				</div>
 			</div>
 		</div>

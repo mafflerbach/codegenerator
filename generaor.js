@@ -103,7 +103,7 @@ var App = {};
 			}
 
 			var code = '<script src="http://de.sevenload.com/pl/' + values.videoid + '/' + values.width + 'x' + values.height + action + '?environment=' + values.environment + '" type="text/javascript"> </script>\n\
-						<p><a href="http://de.sevenload.com/'+platform+'videos/' + values.videoid + '">' + values.title + '</a></p>';
+<p><a href="http://de.sevenload.com/'+platform+'videos/' + values.videoid + '">' + values.title + '</a></p>';
 			return code;
 			
 		},
