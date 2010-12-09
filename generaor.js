@@ -182,6 +182,10 @@ var App = {};
 				text: 'aa',
 				comment :'www.all-access-lounge.de'
 			},
+			{
+				text: 'ab',
+				comment :'www.automobil-blog.de'
+			},
 
 			{
 				text: 'as',
@@ -282,6 +286,10 @@ var App = {};
 				text: 'me',
 				comment :'www.mediamainstream.de'
 			},
+			{
+				text: 'me',
+				comment :'www.mendetta.com'
+			},
 
 			{
 				text: 'mf',
@@ -301,6 +309,11 @@ var App = {};
 			{
 				text: 'mm',
 				comment :'www.das-musikmagazin.de'
+			},
+
+			{
+				text: 'mu',
+				comment :'http://www.musikmarkt.de/'
 			},
 
 			{
@@ -406,6 +419,10 @@ var App = {};
 			{
 				text: 'stm',
 				comment :'www.staemme.de (hochhaus)'
+			},
+			{
+				text: 'sz',
+				comment :'www.schlagerzin.de'
 			},
 
 			{
